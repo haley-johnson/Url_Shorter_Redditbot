@@ -33,9 +33,9 @@ def run_bot(r, comments_replied_to):
             #retrieves the URL stored in the body of the comment
             found_url = (re.search("(?P<url>https?://[^\s]+)", comment.body).group("url"))
             
-            #the base URL of the site on which my current API is hosted, can be changed to any API site 
-            url2 = "'https://j-pqpz.onrender.com/"
-            #the URL for POST request to retrieve shortened URL
+            #the base URL of the site on which my current API is hosted, can be changed to any API base URL 
+            base_URL = "https://j-pqpz.onrender.com/"
+            #the URL for POST request to retrieve shortened URL, currently baseURL is where my current API is hosted, change to your desired API base URL
             URL = 'https://j-pqpz.onrender.com/shortUrls'
             #fullUrl is the initial url in comment body
             PARAMS = {'fullUrl': found_url}
@@ -48,7 +48,7 @@ def run_bot(r, comments_replied_to):
             new = requests.post(url = URL, data = PARAMS, headers = headers).json()[-1]['short']
 
             #comment response
-            comment_reply += ">" + (url2 + new) + "\n\n (apologies - this URL might seem a little long due the base URL of the site I am hosting the API on, this bot is currently for my testing purposes! :) )"
+            comment_reply += ">" + (base_URL + new) + "\n\n (apologies - this URL might seem a little long due the base URL of the site I am hosting the API on, this bot is currently for my testing purposes! :) )"
 
             comment.reply(comment_reply)
             print ("Replied to comment " + comment.id)
