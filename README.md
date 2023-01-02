@@ -7,7 +7,10 @@
 ## My Deployed API and Reddit Bot
 I deployed my API on render -> https://j-pqpz.onrender.com/
 
-Below I have included screenshots of my reddit bot responding to user's comments. 
+Below I have included a screenshot of my reddit bot responding to a users comment. 
+
+[![2023-01-01-22-06-22-3-Test-testingground4bots.png](https://i.postimg.cc/Kz2TJbMy/2023-01-01-22-06-22-3-Test-testingground4bots.png)](https://postimg.cc/CZcdxW7v)
+
 ## Quick Start
 
 ```bash
